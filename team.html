@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ŞAHİNER Hukuk Bürosu - Avukatlar</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Avukatlarımız</h1>
+        <!-- Sekme Menü -->
+        <ul class="nav nav-tabs" id="tabMenu">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" data-target="orhan-aktas">Orhan Aktaş</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-target="furkan-sen">Furkan Şen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-target="yusuf-simsek">Yusuf Şimşek</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-target="serkan-guler">Serkan Güler</a>
+            </li>
+        </ul>
+
+        <!-- Sekme İçerik -->
+        <div class="tab-content active" id="orhan-aktas">
+            <h3>Orhan Aktaş</h3>
+            <p>Uzmanlık: İşletme Hukuku Danışmanı</p>
+            <p>Orhan Aktaş, ticaret ve işletme hukuku alanında uzmanlaşmıştır.</p>
+        </div>
+
+        <div class="tab-content" id="furkan-sen">
+            <h3>Furkan Şen</h3>
+            <p>Uzmanlık: Ceza Hukuku Danışmanı</p>
+            <p>Furkan Şen, ağır ceza davalarında deneyim sahibidir.</p>
+        </div>
+
+        <div class="tab-content" id="yusuf-simsek">
+            <h3>Yusuf Şimşek</h3>
+            <p>Uzmanlık: Aile Hukuku Danışmanı</p>
+            <p>Yusuf Şimşek, boşanma davaları ve velayet süreçlerinde profesyonel destek sunar.</p>
+        </div>
+
+        <div class="tab-content" id="serkan-guler">
+            <h3>Serkan Güler</h3>
+            <p>Uzmanlık: Göçmenlik Hukuku Danışmanı</p>
+            <p>Serkan Güler, göçmenlik hukuku alanında başarılı bir avukattır.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tabs = document.querySelectorAll(".nav-link");
+            const contents = document.querySelectorAll(".tab-content");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    // Tüm sekmelerden "active" sınıfını kaldır
+                    tabs.forEach(item => item.classList.remove("active"));
+                    tab.classList.add("active");
+
+                    // Tüm içerikleri gizle
+                    contents.forEach(content => {
+                        content.classList.remove("active");
+                    });
+
+                    // Tıklanan sekmenin hedef içeriğini göster
+                    const targetId = tab.getAttribute("data-target");
+                    const targetContent = document.getElementById(targetId);
+
+                    // Hedef içeriği kontrol et ve göster
+                    if (targetContent) {
+                        targetContent.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

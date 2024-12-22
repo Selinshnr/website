@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli - Şahiner Hukuk Bürosu</title>
+    <style>
+        /* CSS Başlangıcı */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #34495e;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            overflow-y: auto;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px 0;
+            transition: background 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #1abc9c;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .card h3 {
+            margin: 0 0 10px;
+        }
+        .button {
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: #16a085;
+        }
+        /* CSS Bitişi */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Paneli</h1>
+    </header>
+    <div class="sidebar">
+        <a href="#announcements">Duyurular</a>
+        <a href="#blog">Blog Yönetimi</a>
+        <a href="#questions">Kullanıcı Soruları</a>
+        <a href="#files">Dosya Yönetimi</a>
+        <a href="#law-fields">Hukuk Alanları</a>
+        <a href="#about">Hakkında</a>
+        <a href="#application">Uygulama Alanları</a>
+        <a href="#services">Hizmetlerimiz</a>
+        <a href="#mission-vision">Misyon ve Vizyon</a>
+        <a href="#units">Birimlerimiz</a>
+        <a href="#contact">İletişim</a>
+        <a href="#logout">Çıkış Yap</a>
+    </div>
+    <div class="content">
+        <div id="announcements" class="card">
+            <h3>Duyurular</h3>
+            <button class="button">Yeni Duyuru Ekle</button>
+        </div>
+        <div id="blog" class="card">
+            <h3>Blog Yönetimi</h3>
+            <button class="button">Yeni Blog Yazısı Ekle</button>
+        </div>
+        <div id="questions" class="card">
+            <h3>Kullanıcı Soruları</h3>
+            <button class="button">Soruları Görüntüle</button>
+        </div>
+        <div id="files" class="card">
+            <h3>Dosya Yönetimi</h3>
+            <button class="button">Yeni Dosya Yükle</button>
+        </div>
+        <div id="law-fields" class="card">
+            <h3>Hukuk Alanları</h3>
+            <button class="button">Alanları Düzenle</button>
+        </div>
+        <div id="about" class="card">
+            <h3>Hakkında</h3>
+            <button class="button">Hakkında Sayfasını Düzenle</button>
+        </div>
+        <div id="application" class="card">
+            <h3>Uygulama Alanları</h3>
+            <button class="button">Yeni Uygulama Alanı Ekle</button>
+        </div>
+        <div id="services" class="card">
+            <h3>Hizmetlerimiz</h3>
+            <button class="button">Avukat Özgeçmişlerini Düzenle</button>
+        </div>
+        <div id="mission-vision" class="card">
+            <h3>Misyon ve Vizyon</h3>
+            <button class="button">Misyon ve Vizyonu Düzenle</button>
+        </div>
+        <div id="units" class="card">
+            <h3>Birimlerimiz</h3>
+            <button class="button">Yeni Birim Ekle</button>
+        </div>
+        <div id="contact" class="card">
+            <h3>İletişim</h3>
+            <button class="button">İletişim Bilgilerini Düzenle</button>
+        </div>
+    </div>
+    <script>
+        // JavaScript Başlangıcı
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".button");
+
+            buttons.forEach(button => {
+                button.addEventListener("click", (event) => {
+                    const section = event.target.closest(".card").id;
+                    alert(`${section} yönetimi açıldı!`);
+                });
+            });
+        });
+        // JavaScript Bitişi
+    </script>
+</body>
+</html>
